@@ -23,4 +23,14 @@ describe('My test', function() {
       expect(4).toBe(true)
     })
   })
+
+  describe('beforeEach', function() {
+    var assignedInBefore;
+    beforeEach(function() {
+      assignedInBefore = 5
+    })
+    it('assigns variable and tests it before it', function() {
+      expect(assignedInBefore).toEqual(5)
+    })
+  })
 })

@@ -1,9 +1,15 @@
+var beforeEachFunction = function() {}
+function beforeEach(callback) {
+  beforeEachFunction = callback;
+}
+
 function describe(description, callback) {
   console.log(description)
   callback()
 }
 
 function it(description, callback) {
+  beforeEachFunction();
   console.log('        ' + description)
   callback()
 }
