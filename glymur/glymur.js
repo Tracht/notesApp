@@ -3,15 +3,58 @@ function beforeEach(callback) {
   beforeEachFunction = callback;
 }
 
-function describe(description, callback) {
-  console.log(description)
+var printDepth = 0;
+function incrementPrintDepth() {
+  printDepth += 1;
+}
+
+function decrementPrintDepth() {
+  printDepth -= 1;
+}
+
+function printMessage(message) {
+  var indent = '    '.repeat(printDepth)
+  console.log(indent + message)
+}
+
+function passed() {
+  incrementPrintDepth()
+  printMessage('PASSED')
+  decrementPrintDepth()
+}
+
+function failed(callback) {
+  incrementPrintDepth()
+  printMessage('FAILED')
   callback()
+  decrementPrintDepth()
+}
+
+function matcherError(callback) {
+  incrementPrintDepth()
+  printMessage('MATCHER ERROR')
+  callback()
+  decrementPrintDepth()
+}
+
+function printDivider() {
+  console.log(' ')
+}
+
+function describe(description, callback) {
+  incrementPrintDepth()
+  printMessage(description)
+  callback()
+  decrementPrintDepth()
+  printDivider()
 }
 
 function it(description, callback) {
+  incrementPrintDepth()
   beforeEachFunction();
-  console.log('        ' + description)
+  printMessage(description)
   callback()
+  decrementPrintDepth()
 }
 
 function expect(callback) {
@@ -30,24 +73,28 @@ function Result() {
 
 Result.prototype.toEqual = function(expectation) {
   if(this.assertion === expectation) {
-    console.log('passed')
+    passed()
   } else {
-    console.log('FAILED')
-    console.log(`Expected ${this.assertion} to equal ${expectation}`)
-    console.log(`But equals ${this.assertion}`)
+    failed(function() {
+      printMessage(`Expected ${this.assertion} to equal ${expectation}`)
+      printMessage(`But equals ${this.assertion}`)
+    })
   }
 }
 
 Result.prototype.toBe = function(expectation) {
   if(typeof this.assertion !== 'boolean' || typeof expectation !== 'boolean') {
-    console.log('toBe matcher can only be used with booleans')
+    matcherError(function() {
+      printMessage('toBe can only be used with booleans')
+    })
   } else {
     if(this.assertion === expectation) {
-      console.log('passed')
+      passed()
     } else {
-      console.log('FAILED')
-      console.log(`Expected ${this.assertion} to be ${expectation}`)
-      console.log(`But it was ${this.assertion}`)
+      failed(function() {
+        printMessage(`Expected ${this.assertion} to be ${expectation}`)
+        printMessage(`But it was ${this.assertion}`)
+      })
     }
   }
 }
