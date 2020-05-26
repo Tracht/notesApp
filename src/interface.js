@@ -1,19 +1,3 @@
-
-// document.body.onload = addElement;
-// // alert('hey')
-//
-// function addElement () {
-//   // create a new div element
-//   var newDiv = document.createElement("div");
-//   // and give it some content
-//   var newContent = document.createTextNode("Hi there and greetings!");
-//   // add the text node to the newly created div
-//   newDiv.appendChild(p_element);
-//   // add the newly created element and its content into the DOM
-//   var currentDiv = document.getElementById("div1");
-//   document.body.insertBefore(newDiv, currentDiv);
-// }
-
 document.body.onload = addElement;
 function addElement () {
   var p_element = document.createElement('p');
@@ -23,8 +7,21 @@ function addElement () {
   h1_element.innerHTML = 'h1 elem'
   var div_element = document.createElement('div')
 
-  div_element.appendChild(h1_element);
-  document.body.appendChild(p_element);
-  document.body.appendChild(div_element);
+  let form1 = document.createElement('form')
+  let input = document.createElement('textarea')
 
+  input.setAttribute('rows', 8)
+  input.setAttribute('cols', 40)
+  let button = document.createElement('input')
+  button.setAttribute('type', 'submit')
+  button.setAttribute('value', 'Save Note')
+
+  form1.appendChild(input)
+  form1.appendChild(document.createElement('br'))
+  form1.appendChild(button)
+
+  div_element.appendChild(h1_element);
+  document.body.appendChild(div_element);
+  document.body.appendChild(p_element);
+  document.body.appendChild(form1)
 }
