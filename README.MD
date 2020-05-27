@@ -25,7 +25,7 @@ View notes 20 characters each
 - retrieve list of notes
 - note function that returns first 20 characters of the note body
 - a way to get those 20 characters onto the page as an element [x]
-- create a list of HTML elements as links on the page
+- create a list of HTML elements as links on the page [x]
 - updates every time new note is added
 - clicking link suppresses default event and instead displays full note text
 
