@@ -1,4 +1,3 @@
-var resultObject;
 var beforeEachFunction = function() {}
 function beforeEach(callback) {
   beforeEachFunction = callback;
@@ -70,7 +69,6 @@ function expect(callback) {
 
 function Result() {
   this.assertion = undefined
-  resultObject = this
 }
 
 Result.prototype.toEqual = function(expectation) {
@@ -78,9 +76,9 @@ Result.prototype.toEqual = function(expectation) {
     passed()
   } else {
     failed(function() {
-      printMessage(`Expected ${resultObject.assertion} to equal ${expectation}`)
-      printMessage(`But equals ${resultObject.assertion}`)
-    })
+      printMessage(`Expected ${this.assertion} to equal ${expectation}`)
+      printMessage(`But equals ${this.assertion}`)
+    }.bind(this))
   }
 }
 
@@ -94,9 +92,9 @@ Result.prototype.toBe = function(expectation) {
       passed()
     } else {
       failed(function() {
-        printMessage(`Expected ${resultObject.assertion} to be ${expectation}`)
-        printMessage(`But it was ${resultObject.assertion}`)
-      })
+        printMessage(`Expected ${this.assertion} to be ${expectation}`)
+        printMessage(`But it was ${this.assertion}`)
+      }.bind(this))
     }
   }
 }
