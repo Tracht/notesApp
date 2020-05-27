@@ -1,5 +1,5 @@
 document.body.onload = addElement;
-var array_of_notes = [new Note('note1'), new Note('note2'), new Note('note3')]
+var array_of_notes = []
 function addElement () {
 
   //var array_of_notes = [new Note('note1'), new Note('note2'), new Note('note3')]
@@ -33,15 +33,6 @@ function addElement () {
   document.body.appendChild(p_element);
 
   form1.addEventListener('submit', logSubmit);
-
-  array_of_notes.forEach(note => {
-    var new_note = document.createElement('a')
-    new_note.setAttribute('href', 'www.google.com')
-    new_note.setAttribute('class', 'new-note')
-    new_note.innerHTML = note.body;
-    document.body.appendChild(new_note);
-    document.body.appendChild(document.createElement('br'));
-  })
 }
 
 function logSubmit(event) {
