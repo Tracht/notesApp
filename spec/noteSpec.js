@@ -12,4 +12,5 @@ describe("new note", function() {
     expect(note.body).toEqual(body1)
   })
 
+
 })

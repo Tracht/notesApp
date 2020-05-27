@@ -1,5 +1,8 @@
 document.body.onload = addElement;
 function addElement () {
+
+  var array_of_notes = ['note1', 'note2', 'note3']
+
   var p_element = document.createElement('p');
   p_element.setAttribute('id', 'note-body')
 
@@ -9,7 +12,7 @@ function addElement () {
 
   let form1 = document.createElement('form')
   form1.setAttribute('id', 'input-form')
-  
+
   let input = document.createElement('textarea')
   input.setAttribute('rows', 8)
   input.setAttribute('cols', 40)
@@ -22,6 +25,12 @@ function addElement () {
   form1.appendChild(input)
   form1.appendChild(document.createElement('br'))
   form1.appendChild(button)
+
+  array_of_notes.forEach(note => {
+    var new_note = document.createElement('p')
+    new_note.innerHTML = note;
+    document.body.appendChild(new_note);
+  })
 
   div_element.appendChild(h1_element);
   document.body.appendChild(div_element);
