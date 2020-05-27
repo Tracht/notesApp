@@ -84,17 +84,16 @@ Result.prototype.toEqual = function(expectation) {
 
 Result.prototype.toBe = function(expectation) {
   if(typeof this.assertion !== 'boolean' || typeof expectation !== 'boolean') {
-    matcherError(function() {
+    return matcherError(function() {
       printMessage('toBe can only be used with booleans')
     })
+  }
+  if(this.assertion === expectation) {
+    passed()
   } else {
-    if(this.assertion === expectation) {
-      passed()
-    } else {
-      failed(function() {
-        printMessage(`Expected ${this.assertion} to be ${expectation}`)
-        printMessage(`But it was ${this.assertion}`)
-      }.bind(this))
-    }
+    failed(function() {
+      printMessage(`Expected ${this.assertion} to be ${expectation}`)
+      printMessage(`But it was ${this.assertion}`)
+    }.bind(this))
   }
 }
