@@ -26,18 +26,19 @@ function addElement () {
   form1.appendChild(document.createElement('br'))
   form1.appendChild(button)
 
-  array_of_notes.forEach(note => {
-    var new_note = document.createElement('p')
-    new_note.innerHTML = note;
-    document.body.appendChild(new_note);
-  })
-
   div_element.appendChild(h1_element);
   document.body.appendChild(div_element);
   document.body.appendChild(form1)
   document.body.appendChild(p_element);
 
   form1.addEventListener('submit', logSubmit);
+
+  array_of_notes.forEach(note => {
+    var new_note = document.createElement('p')
+    new_note.setAttribute('id', 'new-note')
+    new_note.innerHTML = note;
+    document.body.appendChild(new_note);
+  })
 }
 
 function logSubmit(event) {
