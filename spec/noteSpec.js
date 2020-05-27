@@ -12,5 +12,9 @@ describe("new note", function() {
     expect(note.body).toEqual(body1)
   })
 
+  it("returns first 20 char: 'Make sure to bring a' ", function() {
+    console.log(note.preview())
+    expect(note.preview()).toEqual('Make sure to bring a')
+  })
 
 })
