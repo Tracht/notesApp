@@ -1,7 +1,8 @@
 document.body.onload = addElement;
+var array_of_notes = [new Note('note1'), new Note('note2'), new Note('note3')]
 function addElement () {
 
-  var array_of_notes = [new Note('note1'), new Note('note2'), new Note('note3')]
+  //var array_of_notes = [new Note('note1'), new Note('note2'), new Note('note3')]
 
   var p_element = document.createElement('p');
   p_element.setAttribute('id', 'note-body')
@@ -46,15 +47,13 @@ function addElement () {
 function logSubmit(event) {
   let inputMessage = document.getElementById('text-input').value
   //let inputMessage = document.getElementById('form-input')[0].value
-  document.getElementById('note-body').innerHTML = inputMessage
+  array_of_notes.push(new Note(inputMessage))
+  var new_note = document.createElement('a')
+  new_note.setAttribute('href', 'www.google.com')
+  new_note.setAttribute('class', 'new-note')
+  new_note.innerHTML = inputMessage;
+  document.body.appendChild(new_note);
+  document.body.appendChild(document.createElement('br'));
+  //document.getElementById('note-body').innerHTML = inputMessage
   event.preventDefault();
 }
-
-// function logSubmit(event) {
-//   event.preventDefault()
-//   let inputMessage = document.getElementById('input-form')[0]
-//   console.log(inputMessage)
-//   //alert(inputMessage)
-//   //target the textarea and get its content and then
-//   //put that into a new notes object
-// }
