@@ -20,21 +20,23 @@ So I can see all the information in the note
 
 View notes 20 characters each
 
+- object that holds notes
+- instantiate notes
 - retrieve list of notes
 - note function that returns first 20 characters of the note body
-- a way to get those 20 characters onto the page as an element
+- a way to get those 20 characters onto the page as an element [ x ]
 - create a list of HTML elements as links on the page
 - updates every time new note is added
 - clicking link suppresses default event and instead displays full note text
 
 Create a note
 
-- generate text box element
-- generate a submit button
-- get text from text box and put it into a...
+- generate text box element [ x ]
+- generate a submit button [ x ]
+- get text from text box and put it into a element on the page [ x ]
 - new note object
 
 View full note
 
 - retrieve particular note's full text
-- generate HTML element that holds full note text
+- generate HTML element that holds full note text [ x ]
