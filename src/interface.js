@@ -37,14 +37,15 @@ function addElement () {
 
 function logSubmit(event) {
   let inputMessage = document.getElementById('text-input').value
-  //let inputMessage = document.getElementById('form-input')[0].value
-  array_of_notes.push(new Note(inputMessage))
+  document.getElementById('text-input').value = ''
+  var noteObject = new Note(inputMessage)
+  array_of_notes.push(noteObject)
   var new_note = document.createElement('a')
   new_note.setAttribute('href', 'www.google.com')
   new_note.setAttribute('class', 'new-note')
-  new_note.innerHTML = inputMessage;
+  new_note.innerHTML = noteObject.preview();
   document.body.appendChild(new_note);
   document.body.appendChild(document.createElement('br'));
-  //document.getElementById('note-body').innerHTML = inputMessage
+
   event.preventDefault();
 }

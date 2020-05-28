@@ -3,6 +3,6 @@ class Note {
     this.body = body
   }
   preview() {
-    return this.body.substring(0,20)
+    return this.body.substring(0,20) + '...'
   }
 }
