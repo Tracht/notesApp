@@ -8,12 +8,9 @@ document.body.onload = function() {
   let noteHeadingElement = document.createElement('h1')
   noteHeadingElement.innerHTML = 'Notes'
 
-  // Be deleted later 
-  let p_element = document.createElement('p')
-  p_element.setAttribute('id', 'note-body')
-  
   document.body.appendChild(noteHeadingElement)
   createPageOneElements()
+  createPageTwoElements()
 }
 
 function createNewNote(event) {
@@ -36,9 +33,10 @@ function createNewNote(event) {
 function addShowBodyEvent(noteElement, indexVar) {
   noteElement.addEventListener('click', function(event) {
     event.preventDefault();
-    // let noteBody = document.getElementById('note-body')
-    // noteBody.innerHTML = array_of_notes[indexVar].body
-    pageOneView.style.visibility = 'hidden'
+     let noteBody = document.getElementById('note-body')
+     noteBody.innerHTML = array_of_notes[indexVar].body
+    pageOneView.style.display = 'none'
+    pageTwoView.style.display = 'block'
   })
 }
 
@@ -64,4 +62,17 @@ function createPageOneElements() {
   document.body.appendChild(pageOneView)
 
   inputForm.addEventListener('submit', createNewNote)
+}
+
+function createPageTwoElements() {
+  let noteBodyElement = document.createElement('p')
+  noteBodyElement.setAttribute('id', 'note-body')
+
+  let homeButton = document.createElement('button')
+  homeButton.innerHTML = 'Home'
+
+  pageTwoView.appendChild(noteBodyElement)
+  pageTwoView.appendChild(homeButton)
+  document.body.appendChild(pageTwoView)
+  pageTwoView.style.display = 'none'
 }

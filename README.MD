@@ -39,6 +39,6 @@ Create a note
 
 View full note
 
-- clicking link suppresses default event and triggers custom event
-- retrieve particular note's full text
+- clicking link suppresses default event and triggers custom event [x]
+- retrieve particular note's full text [x]
 - generate HTML element that holds full note text [x]
