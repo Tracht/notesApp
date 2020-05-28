@@ -20,25 +20,25 @@ So I can see all the information in the note
 
 View notes 20 characters each
 
-- object that holds notes ([x])
-- instantiate notes ([x])
-- retrieve list of notes ([x])
-- note function that returns first 20 characters of the note body ([x])
-- a way to get those 20 characters onto the page as an element ([x])
-- create a list of HTML elements as links on the page ([x])
-- updates every time new note is added ([x])
+- [x] object that holds notes
+- [x] instantiate notes
+- [x] retrieve list of notes
+- [x] note function that returns first 20 characters of the note body
+- [x] a way to get those 20 characters onto the page as an element
+- [x] create a list of HTML elements as links on the page
+- [x] updates every time new note is added
 
 Create a note
 
-- generate text box element ([x])
-- generate a submit button ([x])
-- get text from text box and put it into a element on the page ([x])
-- new note object ([x])
-- clear text element box when note is generated ([x])
-- stop empty notes being added ([x])
+- [x] generate text box element
+- [x] generate a submit button
+- [x] get text from text box and put it into a element on the page
+- [x] new note object
+- [x] clear text element box when note is generated
+- [x] stop empty notes being added
 
 View full note
 
-- clicking link suppresses default event and triggers custom event ([x])
-- retrieve particular note's full text ([x])
-- generate HTML element that holds full note text ([x])
+- [x] clicking link suppresses default event and triggers custom event
+- [x] retrieve particular note's full text
+- [x] generate HTML element that holds full note text
