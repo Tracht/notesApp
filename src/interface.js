@@ -1,64 +1,67 @@
-document.body.onload = addElement;
-var array_of_notes = []
-function addElement () {
+'use strict';
 
-  //var array_of_notes = [new Note('note1'), new Note('note2'), new Note('note3')]
+let pageOneView = document.createElement('div')
+let pageTwoView = document.createElement('div')
+let array_of_notes = []
 
-  var p_element = document.createElement('p');
+document.body.onload = function() {
+  let noteHeadingElement = document.createElement('h1')
+  noteHeadingElement.innerHTML = 'Notes'
+
+  // Be deleted later 
+  let p_element = document.createElement('p')
   p_element.setAttribute('id', 'note-body')
-
-  var h1_element = document.createElement('h1');
-  h1_element.innerHTML = 'h1 elem'
-  var div_element = document.createElement('div')
-
-  let form1 = document.createElement('form')
-  form1.setAttribute('id', 'input-form')
-
-  let input = document.createElement('textarea')
-  input.setAttribute('rows', 8)
-  input.setAttribute('cols', 40)
-  input.setAttribute('id', 'text-input')
-
-  let button = document.createElement('input')
-  button.setAttribute('type', 'submit')
-  button.setAttribute('value', 'Save Note')
-
-  form1.appendChild(input)
-  form1.appendChild(document.createElement('br'))
-  form1.appendChild(button)
-
-  div_element.appendChild(h1_element);
-  document.body.appendChild(div_element);
-  document.body.appendChild(form1)
-  document.body.appendChild(p_element);
-
-  form1.addEventListener('submit', logSubmit);
+  
+  document.body.appendChild(noteHeadingElement)
+  createPageOneElements()
 }
 
-function logSubmit(event) {
+function createNewNote(event) {
   let inputMessage = document.getElementById('text-input').value
   document.getElementById('text-input').value = ''
-  var noteObject = new Note(inputMessage)
-  var new_note = document.createElement('a')
-  var indexNumber = array_of_notes.length
+  let noteObject = new Note(inputMessage)
+  let new_note = document.createElement('a')
+  addShowBodyEvent(new_note, array_of_notes.length)
   array_of_notes.push(noteObject)
 
-  var new_note = document.createElement('a')
-  new_note.addEventListener('click',
-  function(event) {
-    event.preventDefault();
-    // remove all elem
-    
-    p_element = document.getElementById('note-body')
-    console.log(p_element)
-    p_element.innerHTML = array_of_notes[indexNumber].body
-  });
-
-  new_note.setAttribute('href', 'www.google.com')
+  new_note.setAttribute('href', '/')
   new_note.setAttribute('class', 'new-note')
-  new_note.innerHTML = noteObject.preview();
-  document.body.appendChild(new_note);
-  document.body.appendChild(document.createElement('br'));
+  new_note.innerHTML = noteObject.preview()
+  pageOneView.appendChild(new_note)
+  pageOneView.appendChild(document.createElement('br'))
 
-  event.preventDefault();
+  event.preventDefault()
+}
+
+function addShowBodyEvent(noteElement, indexVar) {
+  noteElement.addEventListener('click', function(event) {
+    event.preventDefault();
+    // let noteBody = document.getElementById('note-body')
+    // noteBody.innerHTML = array_of_notes[indexVar].body
+    pageOneView.style.visibility = 'hidden'
+  })
+}
+
+function createPageOneElements() {
+
+  let inputForm = document.createElement('form')
+  inputForm.setAttribute('id', 'input-form')
+
+  let noteBodyInput = document.createElement('textarea')
+  noteBodyInput.setAttribute('rows', 8)
+  noteBodyInput.setAttribute('cols', 40)
+  noteBodyInput.setAttribute('id', 'text-input')
+
+  let noteSubmissionButton = document.createElement('input')
+  noteSubmissionButton.setAttribute('type', 'submit')
+  noteSubmissionButton.setAttribute('value', 'Save Note')
+
+  inputForm.appendChild(noteBodyInput)
+  inputForm.appendChild(document.createElement('br'))
+  inputForm.appendChild(noteSubmissionButton)
+
+  pageOneView.appendChild(inputForm)
+  document.body.appendChild(pageOneView)
+
+  inputForm.addEventListener('submit', createNewNote)
 }
