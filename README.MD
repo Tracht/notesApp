@@ -35,7 +35,7 @@ Create a note
 - get text from text box and put it into a element on the page [x]
 - new note object [x]
 - clear text element box when note is generated [x]
-- stop empty notes being added
+- stop empty notes being added [x]
 
 View full note
 

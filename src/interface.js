@@ -2,7 +2,7 @@
 
 let pageOneView = document.createElement('div')
 let pageTwoView = document.createElement('div')
-let array_of_notes = []
+let arrayOfNotes = []
 
 document.body.onload = function() {
   let noteHeadingElement = document.createElement('h1')
@@ -14,12 +14,14 @@ document.body.onload = function() {
 }
 
 function createNewNote(event) {
+  event.preventDefault()
   let inputMessage = document.getElementById('text-input').value
+  if(inputMessage === '') return
   document.getElementById('text-input').value = ''
   let noteObject = new Note(inputMessage)
   let new_note = document.createElement('a')
-  addShowBodyEvent(new_note, array_of_notes.length)
-  array_of_notes.push(noteObject)
+  addShowBodyEvent(new_note, arrayOfNotes.length)
+  arrayOfNotes.push(noteObject)
 
   new_note.setAttribute('href', '/')
   new_note.setAttribute('class', 'new-note')
@@ -27,14 +29,13 @@ function createNewNote(event) {
   pageOneView.appendChild(new_note)
   pageOneView.appendChild(document.createElement('br'))
 
-  event.preventDefault()
 }
 
 function addShowBodyEvent(noteElement, indexVar) {
   noteElement.addEventListener('click', function(event) {
     event.preventDefault();
      let noteBody = document.getElementById('note-body')
-     noteBody.innerHTML = array_of_notes[indexVar].body
+     noteBody.innerHTML = arrayOfNotes[indexVar].body
     pageOneView.style.display = 'none'
     pageTwoView.style.display = 'block'
   })
@@ -70,7 +71,10 @@ function createPageTwoElements() {
 
   let homeButton = document.createElement('button')
   homeButton.innerHTML = 'Home'
-
+  homeButton.addEventListener('click', function(event) {
+    pageTwoView.style.display = 'none'
+    pageOneView.style.display = 'block'
+  })
   pageTwoView.appendChild(noteBodyElement)
   pageTwoView.appendChild(homeButton)
   document.body.appendChild(pageTwoView)
