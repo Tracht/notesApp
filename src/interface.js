@@ -39,8 +39,22 @@ function logSubmit(event) {
   let inputMessage = document.getElementById('text-input').value
   document.getElementById('text-input').value = ''
   var noteObject = new Note(inputMessage)
-  array_of_notes.push(noteObject)
   var new_note = document.createElement('a')
+  var indexNumber = array_of_notes.length
+  array_of_notes.push(noteObject)
+
+  var new_note = document.createElement('a')
+  new_note.addEventListener('click',
+      function(event) {
+        event.preventDefault();
+        getElementById(note-body)
+          (array_of_notes[indexNumber].body)
+      });
+
+    // retrieve note's ID
+    // go into array, selecting full note, using ID
+    // append note.body to document
+
   new_note.setAttribute('href', 'www.google.com')
   new_note.setAttribute('class', 'new-note')
   new_note.innerHTML = noteObject.preview();
