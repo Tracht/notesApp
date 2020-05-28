@@ -45,15 +45,14 @@ function logSubmit(event) {
 
   var new_note = document.createElement('a')
   new_note.addEventListener('click',
-      function(event) {
-        event.preventDefault();
-        getElementById(note-body)
-          (array_of_notes[indexNumber].body)
-      });
-
-    // retrieve note's ID
-    // go into array, selecting full note, using ID
-    // append note.body to document
+  function(event) {
+    event.preventDefault();
+    // remove all elem
+    
+    p_element = document.getElementById('note-body')
+    console.log(p_element)
+    p_element.innerHTML = array_of_notes[indexNumber].body
+  });
 
   new_note.setAttribute('href', 'www.google.com')
   new_note.setAttribute('class', 'new-note')
