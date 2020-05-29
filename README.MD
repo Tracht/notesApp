@@ -66,3 +66,8 @@ View full note
 - [x] clicking link suppresses default event and triggers custom event
 - [x] retrieve particular note's full text
 - [x] generate HTML element that holds full note text
+
+## Preview
+<img width="280" alt="homepage" src="https://user-images.githubusercontent.com/28805811/83274013-1b7c9480-a1c5-11ea-9d72-84f5b63598bd.png">
+
+<img width="273" alt="fullNotePage" src="https://user-images.githubusercontent.com/28805811/83274015-1c152b00-a1c5-11ea-804a-58badf24ed90.png">
