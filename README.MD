@@ -37,9 +37,10 @@ Create a note
 - [x] clear text element box when note is generated
 - [x] stop empty notes being added
 
-Create note Manager 
+Create note Manager
 - [x] holds an array of note objects
 - [x] create addNote method to add note objects to array
+- [x] create getNote method to retrieve a note
 
 View full note
 
