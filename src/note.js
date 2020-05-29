@@ -1,8 +1,12 @@
 class Note {
   constructor(body) {
-    this.body = body
+    this._body = body
   }
   preview() {
-    return this.body.substring(0,20) + '...'
+    return this._body.substring(0,20) + '...'
+  }
+
+  body() {
+    return this._body
   }
 }
