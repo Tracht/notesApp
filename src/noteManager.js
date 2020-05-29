@@ -2,11 +2,19 @@
 class NoteManager {
 
   constructor() {
-    this.notes = []
+    this._notes = []
   }
 
-  _addNote(noteObject) {
-    this.notes.push(noteObject);
+  numberOfNotes() {
+    return this._notes.length
+  }
+
+  addNote(noteObject) {
+    this._notes.push(noteObject);
+  }
+
+  getNote(index) {
+    return this._notes[index]
   }
 
 }
