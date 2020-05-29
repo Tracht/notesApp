@@ -1,3 +1,5 @@
+'use strict';
+
 class Note {
   constructor(body) {
     this._body = body

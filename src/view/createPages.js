@@ -1,3 +1,5 @@
+'use strict';
+
 function createPageOneElements() {
 
   let inputForm = document.createElement('form')

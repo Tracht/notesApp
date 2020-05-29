@@ -1,3 +1,5 @@
+'use strict';
+
 function addShowBodyEvent(noteElement, indexVar) {
   noteElement.addEventListener('click', function(event) {
     event.preventDefault();

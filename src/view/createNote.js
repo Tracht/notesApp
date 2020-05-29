@@ -1,3 +1,5 @@
+'use strict';
+
 function createNewNote(event) {
   event.preventDefault()
   let inputMessage = document.getElementById('text-input').value
