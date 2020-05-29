@@ -1,6 +1,25 @@
 # Notes App
 `Challenge:` Build a frontend, single page web app to create and list notes
 
+## How to use
+
+1. Clone this repo with `git clone`.
+2. open `index.html` in your browser of choice.
+3. Have fun! 🤩
+
+## Object Table
+
+| Object | Message |
+| --- | --- |
+| Note | body() |
+| | preview() |
+
+| Object | Message |
+| --- | --- |
+| NoteManager | numberOfNotes()
+| | addNote()
+| | getNote(index) |
+
 ## User Stories
 ```
 As a programmer
