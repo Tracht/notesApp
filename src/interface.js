@@ -19,15 +19,15 @@ function createNewNote(event) {
   if(inputMessage === '') return
   document.getElementById('text-input').value = ''
   let noteObject = new Note(inputMessage)
-  let new_note = document.createElement('a')
+  let newNote = document.createElement('a')
 
-  addShowBodyEvent(new_note, noteManager.notes.length)
-  noteManager._addNote(noteObject)
+  addShowBodyEvent(newNote, noteManager.numberOfNotes())
+  noteManager.addNote(noteObject)
 
-  new_note.setAttribute('href', '/')
-  new_note.setAttribute('class', 'new-note')
-  new_note.innerHTML = noteObject.preview()
-  pageOneView.appendChild(new_note)
+  newNote.setAttribute('href', '/')
+  newNote.setAttribute('class', 'new-note')
+  newNote.innerHTML = noteObject.preview()
+  pageOneView.appendChild(newNote)
   pageOneView.appendChild(document.createElement('br'))
 }
 
@@ -35,7 +35,7 @@ function addShowBodyEvent(noteElement, indexVar) {
   noteElement.addEventListener('click', function(event) {
     event.preventDefault();
      let noteBody = document.getElementById('note-body')
-     noteBody.innerHTML = noteManager.notes[indexVar].body
+     noteBody.innerHTML = noteManager.getNote(indexVar).body
 
     pageOneView.style.display = 'none'
     pageTwoView.style.display = 'block'
