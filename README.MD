@@ -7,18 +7,10 @@
 2. open `index.html` in your browser of choice.
 3. Have fun! 🤩
 
-## Object Table
+## Preview
+<img width="280" alt="homepage" src="https://user-images.githubusercontent.com/28805811/83274013-1b7c9480-a1c5-11ea-9d72-84f5b63598bd.png">
 
-| Object | Message |
-| --- | --- |
-| Note | body() |
-| | preview() |
-
-| Object | Message |
-| --- | --- |
-| NoteManager | numberOfNotes()
-| | addNote()
-| | getNote(index) |
+<img width="273" alt="fullNotePage" src="https://user-images.githubusercontent.com/28805811/83274015-1c152b00-a1c5-11ea-804a-58badf24ed90.png">
 
 ## User Stories
 ```
@@ -34,6 +26,19 @@ As a programmer
 I can see the full text of an individual note on its own page
 So I can see all the information in the note
 ```
+
+## Object Table
+
+| Object | Message |
+| --- | --- |
+| Note | body() |
+| | preview() |
+
+| Object | Message |
+| --- | --- |
+| NoteManager | numberOfNotes()
+| | addNote()
+| | getNote(index) |
 
 ## Approach
 
@@ -66,8 +71,3 @@ View full note
 - [x] clicking link suppresses default event and triggers custom event
 - [x] retrieve particular note's full text
 - [x] generate HTML element that holds full note text
-
-## Preview
-<img width="280" alt="homepage" src="https://user-images.githubusercontent.com/28805811/83274013-1b7c9480-a1c5-11ea-9d72-84f5b63598bd.png">
-
-<img width="273" alt="fullNotePage" src="https://user-images.githubusercontent.com/28805811/83274015-1c152b00-a1c5-11ea-804a-58badf24ed90.png">
