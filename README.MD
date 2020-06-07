@@ -71,3 +71,17 @@ View full note
 - [x] clicking link suppresses default event and triggers custom event
 - [x] retrieve particular note's full text
 - [x] generate HTML element that holds full note text
+
+## Diagramming HTTP response
+
+#### Display page 1: shows note form & a list of note links
+![displayPage1](https://user-images.githubusercontent.com/28805811/83970821-b8c77f00-a8cf-11ea-95cc-d68da908a1a6.png)
+
+#### Create new note: shows updated list of note links
+![createNote](https://user-images.githubusercontent.com/28805811/83970874-017f3800-a8d0-11ea-9bc6-7276bf8b4165.png)
+
+#### Display page 2: click on note link and shows full body text
+![displayPage2_fullbody](https://user-images.githubusercontent.com/28805811/83970777-77cf6a80-a8cf-11ea-8010-88e19927be30.png)
+
+#### Return to page1: click on "home" button on page 2
+![homeButton](https://user-images.githubusercontent.com/28805811/83970938-63d83880-a8d0-11ea-8e27-dacd81aad2fd.png)
