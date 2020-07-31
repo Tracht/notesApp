@@ -1,10 +1,9 @@
 # Notes App
-`Challenge:` Build a frontend, single page web app to create and list notes
+Challenge: build a frontend single page web app to create and display notes
 
 ## How to use
-
 1. Clone this repo with `git clone`.
-2. open `index.html` in your browser of choice.
+2. From the command line, run `open index.html` in the browser of your choice.
 3. Have fun! 🤩
 
 ## Preview
