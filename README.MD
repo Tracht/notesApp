@@ -7,8 +7,10 @@ Challenge: build a frontend single page web app to create and display notes
 3. Have fun! 🤩
 
 ## Preview
+Homepage
 <img width="280" alt="homepage" src="https://user-images.githubusercontent.com/28805811/83274013-1b7c9480-a1c5-11ea-9d72-84f5b63598bd.png">
 
+View the entire note
 <img width="273" alt="fullNotePage" src="https://user-images.githubusercontent.com/28805811/83274015-1c152b00-a1c5-11ea-804a-58badf24ed90.png">
 
 ## User Stories
