@@ -6,7 +6,6 @@ Challenge: build a frontend single page web app to create and display notes
 2. From the command line, run `open index.html` in the browser of your choice.
 3. Have fun! 🤩
 
-## Preview
 Homepage
 ---
 <img width="280" alt="homepage" src="https://user-images.githubusercontent.com/28805811/83274013-1b7c9480-a1c5-11ea-9d72-84f5b63598bd.png">
